@@ -3,3 +3,5 @@ const app = express();
 module.exports = app;
 
 app.set('view engine', 'ejs');
+
+app.use('/', require('./routes/home'));
