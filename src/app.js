@@ -9,3 +9,5 @@ app.use('/', require('./routes/home'));
 app.use('/catalog', require('./routes/catalog'));
 
 app.use('/cart', require('./routes/cart'));
+
+app.use('/auth', require('./routes/auth'));
