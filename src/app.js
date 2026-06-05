@@ -11,3 +11,5 @@ app.use('/catalog', require('./routes/catalog'));
 app.use('/cart', require('./routes/cart'));
 
 app.use('/auth', require('./routes/auth'));
+
+app.use('/admin', require('./routes/admin'));
