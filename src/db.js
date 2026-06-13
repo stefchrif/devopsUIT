@@ -38,7 +38,7 @@ db.serialize(() => {
         db.run("INSERT INTO products (name, category_id, price, stock) VALUES ('MacBook Pro M3', 1, 1999.99, 10)");
         db.run("INSERT INTO products (name, category_id, price, stock) VALUES ('iPhone 15 Pro', 2, 1199.00, 25)");
         db.run("INSERT INTO products (name, category_id, price, stock) VALUES ('Sony WH-1000XM5', 3, 349.50, 40)");
-        db.run("INSERT INTO products (name, category_id, price, stock) VALUES ('Écran Dell UltraSharp 27"', 4, 650.00, 15)");
+        db.run("INSERT INTO products (name, category_id, price, stock) VALUES ('Écran Dell UltraSharp 27 pouces', 4, 650.00, 15)");
       }
     });
   });
