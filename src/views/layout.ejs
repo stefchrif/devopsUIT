@@ -1,1 +1,27 @@
-<html><body><%- body %></body></html>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevOps E-Commerce</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">DevOpsShop</a>
+      <ul>
+        <li><a href="/">Catalogue</a></li>
+        <li><a href="/cart">Panier</a></li>
+        <li><a href="/auth/login" class="btn">Connexion</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <%- body %>
+  </main>
+  <footer class="footer">
+    <p>Projet de fin d'étude DevOps &copy; 2026 - Mustapha EL ATRASSI</p>
+  </footer>
+</body>
+</html>
