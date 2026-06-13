@@ -1,17 +1,15 @@
-<%- include('layout', { body: `
-  <h1>Nos Produits Tendance</h1>
-  <div class="products-grid">
-    <% if (products && products.length > 0) { %>
-      <% products.forEach(p => { %>
-        <div class="product-card">
-          <div class="product-title"><%= p.name %></div>
-          <div class="product-category">Catégorie: <%= p.category_id || 'Général' %></div>
-          <div class="product-price"><%= p.price %> €</div>
-          <a href="/cart/add/<%= p.id %>" class="btn" style="text-align: center;">Ajouter au panier</a>
-        </div>
-      <% }) %>
-    <% } else { %>
-      <p style="text-align: center; width: 100%; color: #94a3b8;">Aucun produit disponible pour le moment.</p>
-    <% } %>
-  </div>
-` }) %>
+<h1>Nos Produits Tendance</h1>
+<div class="products-grid">
+  <% if (products && products.length > 0) { %>
+    <% products.forEach(p => { %>
+      <div class="product-card">
+        <div class="product-title"><%= p.name %></div>
+        <div class="product-category">Catégorie: <%= p.category_id || 'Général' %></div>
+        <div class="product-price"><%= p.price %> €</div>
+        <a href="/cart/add/<%= p.id %>" class="btn" style="text-align: center;">Ajouter au panier</a>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p style="text-align: center; width: 100%; color: #94a3b8;">Aucun produit disponible pour le moment.</p>
+  <% } %>
+</div>
