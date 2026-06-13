@@ -1,5 +1,13 @@
 const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database('./data/database.db');
+const fs = require('fs');
+const path = require('path');
+
+const dataPath = path.join(__dirname, '..', 'data');
+if (!fs.existsSync(dataPath)) {
+  fs.mkdirSync(dataPath, { recursive: true });
+}
+
+const db = new sqlite3.Database(path.join(dataPath, 'database.db'));
 function init() {}
 module.exports = { db, init };
 
