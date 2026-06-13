@@ -1,1 +1,33 @@
-<h1>Mon Panier</h1>
+
+<div style="max-width: 800px; margin: 4rem auto;">
+  <h1 style="text-align: left;">Votre Panier</h1>
+  <div style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); padding: 2rem;">
+    <% if (cart && cart.length > 0) { %>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+        <tr style="border-bottom: 1px solid var(--border-color); color: #94a3b8; text-align: left;">
+          <th style="padding: 1rem;">Produit</th>
+          <th style="padding: 1rem;">Prix</th>
+          <th style="padding: 1rem;">Quantité</th>
+          <th style="padding: 1rem;">Total</th>
+        </tr>
+        <% let total = 0; cart.forEach(item => { total += item.price * item.quantity; %>
+          <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <td style="padding: 1rem; font-weight: bold;"><%= item.name %></td>
+            <td style="padding: 1rem;"><%= item.price.toFixed(2) %> €</td>
+            <td style="padding: 1rem;"><%= item.quantity %></td>
+            <td style="padding: 1rem; color: var(--primary-color); font-weight: bold;"><%= (item.price * item.quantity).toFixed(2) %> €</td>
+          </tr>
+        <% }) %>
+      </table>
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2 style="margin: 0;">Total : <span style="color: var(--primary-color);"><%= total.toFixed(2) %> €</span></h2>
+        <form action="/cart/checkout" method="POST">
+          <button type="submit" class="btn btn-large">Passer la commande</button>
+        </form>
+      </div>
+    <% } else { %>
+      <p style="color: #94a3b8; text-align: center; padding: 2rem 0;">Votre panier est vide.</p>
+      <div style="text-align: center;"><a href="/" class="btn">Retour à la boutique</a></div>
+    <% } %>
+  </div>
+</div>

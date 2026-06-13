@@ -1,1 +1,28 @@
-<h1>Gestion des catégories</h1>
+
+<div style="max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+  <div class="sidebar">
+    <h3>Administration</h3>
+    <ul class="category-list">
+      <li><a href="/admin">Tableau de bord</a></li>
+      <li><a href="/admin/products">Gestion des Produits</a></li>
+      <li class="active"><a href="/admin/categories">Gestion des Catégories</a></li>
+      <li><a href="/auth/logout" style="color: #ef4444; margin-top: 2rem;">Déconnexion</a></li>
+    </ul>
+  </div>
+  <div style="background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h1 style="text-align: left; margin: 0;">Catégories</h1>
+      <button class="btn">Ajouter une catégorie</button>
+    </div>
+    <ul style="list-style: none; padding: 0;">
+      <% categories.forEach(c => { %>
+        <li style="padding: 1rem; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between;">
+          <span style="font-weight: bold;"><%= c.name %></span>
+          <span>
+            <button class="btn" style="padding: 0.2rem 0.5rem; font-size: 0.8rem; background: #ef4444;">Supprimer</button>
+          </span>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>

@@ -1,1 +1,16 @@
-<h1>Détail du produit</h1>
+
+<div class="product-detail-container" style="max-width: 1000px; margin: 4rem auto; display: flex; gap: 4rem; background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); backdrop-filter: var(--glass-blur);">
+  <div class="product-image-wrapper" style="flex: 1; border-radius: 16px; overflow: hidden; height: 400px;">
+    <img src="<%= p.image_url || 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&q=80' %>" alt="<%= p.name %>" style="width: 100%; height: 100%; object-fit: cover;">
+  </div>
+  <div class="product-info-detail" style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div class="product-category" style="color: var(--primary-color); font-weight: bold; margin-bottom: 1rem; text-transform: uppercase;"><%= p.category_name || 'Général' %></div>
+    <h1 style="font-size: 2.5rem; margin-bottom: 1rem; text-align: left;"><%= p.name %></h1>
+    <p style="color: #94a3b8; line-height: 1.6; margin-bottom: 2rem; font-size: 1.1rem;"><%= p.description || 'Description complète du produit. Ce produit offre d\'excellentes performances et un design premium qui s\'intègrera parfaitement dans votre quotidien.' %></p>
+    <div class="product-price" style="font-size: 2.5rem; color: #fff; font-weight: 800; margin-bottom: 2rem;"><%= p.price.toFixed(2) %> €</div>
+    <div style="display: flex; gap: 1rem; align-items: center;">
+      <a href="/cart/add/<%= p.id %>" class="btn btn-large" style="flex: 1; text-align: center;">Ajouter au panier</a>
+      <span style="color: #f59e0b; font-weight: bold;"><%= p.stock %> en stock</span>
+    </div>
+  </div>
+</div>

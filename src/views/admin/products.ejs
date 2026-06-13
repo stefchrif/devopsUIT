@@ -1,1 +1,41 @@
-<h1>Gestion des produits</h1>
+
+<div style="max-width: 1200px; margin: 2rem auto; display: grid; grid-template-columns: 250px 1fr; gap: 2rem;">
+  <div class="sidebar">
+    <h3>Administration</h3>
+    <ul class="category-list">
+      <li><a href="/admin">Tableau de bord</a></li>
+      <li class="active"><a href="/admin/products">Gestion des Produits</a></li>
+      <li><a href="/admin/categories">Gestion des Catégories</a></li>
+      <li><a href="/auth/logout" style="color: #ef4444; margin-top: 2rem;">Déconnexion</a></li>
+    </ul>
+  </div>
+  <div style="background: var(--card-bg); padding: 2rem; border-radius: 16px; border: 1px solid var(--border-color);">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <h1 style="text-align: left; margin: 0;">Produits</h1>
+      <button class="btn">Ajouter un produit</button>
+    </div>
+    <table style="width: 100%; border-collapse: collapse;">
+      <tr style="border-bottom: 1px solid var(--border-color); color: #94a3b8; text-align: left;">
+        <th style="padding: 1rem;">ID</th>
+        <th style="padding: 1rem;">Nom</th>
+        <th style="padding: 1rem;">Catégorie</th>
+        <th style="padding: 1rem;">Prix</th>
+        <th style="padding: 1rem;">Stock</th>
+        <th style="padding: 1rem;">Actions</th>
+      </tr>
+      <% products.forEach(p => { %>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+          <td style="padding: 1rem;"><%= p.id %></td>
+          <td style="padding: 1rem; font-weight: bold;"><%= p.name %></td>
+          <td style="padding: 1rem;"><%= p.category_name %></td>
+          <td style="padding: 1rem; color: var(--primary-color);"><%= p.price.toFixed(2) %> €</td>
+          <td style="padding: 1rem;"><%= p.stock %></td>
+          <td style="padding: 1rem;">
+            <button class="btn" style="padding: 0.2rem 0.5rem; font-size: 0.8rem; background: #f59e0b;">Éditer</button>
+            <button class="btn" style="padding: 0.2rem 0.5rem; font-size: 0.8rem; background: #ef4444;">Supprimer</button>
+          </td>
+        </tr>
+      <% }) %>
+    </table>
+  </div>
+</div>
